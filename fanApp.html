@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        @keyframes fan {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box {
+            width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .onAnim {
+            animation: fan 1s linear 0;
+            animation-iteration-count: infinite;
+        }
+
+        #toggleBtn {
+            background-color: orange;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: 1px solid orange;
+            border-radius: 22px;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        #toggleBtn:hover {
+            background-color: white;
+            color:orange;
+        }
+        div.fanBtns {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img id="fan" class="" src="fan.png" alt="">
+        <div class="fanBtns">
+            <a id="toggleBtn" href="#" onclick="on_OffFan()">ON/OFF</a>
+        </div>
+    </div>
+
+    <script>
+        function on_OffFan() {
+            var fanImg = document.getElementById("fan");
+            fanImg.classList.toggle("onAnim");
+        }
+    </script>
+</body>
+
+</html>
